@@ -1,0 +1,46 @@
+#include<iostream.h>
+#include<math.h>
+#include<conio.h>
+#include<stdlib.h>
+#include<stdlib.h>
+
+void main(){
+	clrscr();
+	int x,sum=21,y;
+	cout<<"\nThere are 21 Sticks\n";
+	while(sum!=0){
+		cout<<"\nPick one from 1,2,3,4 : ";
+		cin>>x;
+		if(x<5&&x>0){
+			sum=sum-x;
+			cout<<"\nSticks left: "<<sum;
+		}else {
+			cout<<"Input valid sticks";
+			continue;
+		}
+		cout<<"\nComputer Picks:";
+		if(sum>5){
+			y=random(4)+1;
+			cout<<y;
+			sum=sum-y;
+			cout<<"\nSticks Left: "<<sum;
+		}else if(sum<=5){
+			if(sum==5){
+				y=4;
+			}else if(sum==4){
+				y=3;
+			}else if(sum==3){
+				y=2;
+			}else if(sum==2){
+				y=1;
+			}
+			cout<<y;
+			sum=sum-y;
+			cout<<"\nComputer Wins";
+			cout<<"\nSticks Left: "<<sum;
+			break;
+		}
+
+	}
+	getch();
+}
